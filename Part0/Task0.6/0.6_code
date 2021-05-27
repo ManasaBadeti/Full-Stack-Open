@@ -1,0 +1,35 @@
+title 0.6: New note
+
+
+note left of Browser: User submits new note
+note over Browser:
+Browser gets the data from the DOM 
+element and updates the DOM with the new note
+end note
+note over Browser: Browser sends new note to server using JSON format
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+
+note over Server:
+Server parses the new note data and adds it
+to the notes list on the server
+end note
+
+
+Server->Browser: HTTP 201 Creates status code ({"message":"note created"})
+
+note over Browser:
+Browser stays on the same page and 
+no further HTTP requests are sent
+end note over 
+
+note left of Server:
+The command document getElementByID instructs the code to fetch 
+the form element from the page and register an event handler
+in order to handle the form submit event
+end note
+
+note left of Server:
+The event handler immediately calls preventDetails() to prevent
+default handling of form submit and sends the new note to the server
+end note
