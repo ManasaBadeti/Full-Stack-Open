@@ -1,0 +1,40 @@
+title New Note
+
+
+note left of Browser: User submits new note
+
+Browser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/notes
+
+note right of Server: 
+Server adds the new note to the notes array 
+end note 
+
+Server->Browser: HTTP 302  status code - URL redirect
+
+
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+Server->Browser: HTML page for /notes
+
+note over Browser: 
+Page reloads, browser parses the HTML code 
+and requests the CSS and JS files
+end note
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+Server->Browser: main.css
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+
+Server->Browser: main.js
+
+note over Browser: Browser starts executing the JS code and sends a request to/data.json to get the list of notes
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+note over Server: Returns update list of notes in JSON format
+
+Server->Browser: [{"content": "Hello world","date":"2021-05-27T09:32:434Z"},....]
+
+note over Browser: Browser executes the event handler that parses the data and renders notes to displa 
