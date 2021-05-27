@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Online Passport Application</title>
+    <link href="formstyle.css" rel="stylesheet">
+    <link href="script.js">
+</head>
+<body>
+	<div class="wrapper">
+		<section>
+			<h1>Passport Online Application Form</h1>
+			<p>Fill out the form below to apply for passport.</p>
+			<!--Here form begins at start of section, so it ends at end of section(inside of section)-->
+			<!--Here I have added these action, method attributes in form tag and also hidden type next, in order to enable it to submitting, -->
+		  <form>
+			
+			  <!--Fieldset is used, whenever u want the users fill so many fields like contact info, about, etc.. This fieldset nicely keeps things in each field -->
+			<fieldset>
+				  <!--Inside fieldset, the name of the field can be given with legend-->
+			<legend>Applicant information</legend>
+			<!--Here id can be anything, u can give any name there-->
+			<!--NOTE: Label for="id" , whatever u gave in id that must be there in label for=""-->
+            <!--Here I have used "required" attribute too so that if I submit the form without filling them,it asks to field is required and fill it-->
+           <div class="left">
+			<label for="name">Name </label>
+                <input type="text" id="name" name="name" required>
+            <label for="First name">First Name(Given Name) </label>
+                <input type="text" id="First name" name=" First name">
+            <label for="Last name">Last Name(SurName) </label>
+                <input type="text" id="First name" name=" First name" required>
+            <label for="Date of Birth">Date of Birth </label>
+                <input type="date" id="date" name="date" required>
+            <label for="Country">Country of Birth</label>
+                <input type="text" id="country" name="country" required>
+            <label for="State">State</label>
+                <!--Here I'm using list, means we get dop down list and we need to select from that-->
+                    <select id="state" name="state" required>
+                        <!--Here I have used this option selected so that by default, the it will display select one, so that u understand better that u need to select one..and after that u can select one from the list-->
+                        <!--You can use "selected" in any other option also if u want, in order to keep that selected by default-->
+                        <!--NOTE: In the same way u use "checked" for radio buttons as well-->
+                        <option selected>Select one...</option>
+                        <option value="tour">Andhra Pradesh</option>
+                        <option value="dinner">Tamil Nadu</option>
+                        <option value="dance">Karnataka</option>
+                        <option value="whale">Kerela</option>
+                        <option value="MP">Madhya Pradesh</option>
+                        <option value="MH">Maharashtra</option>
+                        <option value="O">Orissa</option>
+                        <option value="UP">Uttar Pradesh</option>
+                    </select>
+                
+           
+            <label for="District">Birth District</label>
+                    <input type="text" id="district" name="district" required>
+                </div>
+                <section class="right">
+            <label for="Marital Status">Marital Status</label>
+                    <select id="status" name="status" required>
+                        <option selected>Single</option>
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                    </select>
+            <label for="Qualification">Qualification </label>
+                <input type="text" id="Qualification" name="Qualification" >
+            <label for="Profession">Profession </label>
+                <input type="text" id="Profession" name="Profession" required>
+           
+                       
+                            <label>Gender</label>
+                            <!--Here we have used radio buttons, to select.. We have given inside label because the whole text is clickable(if we select/click on the text beside radio button, then also it will be selected)-->
+                                <label>
+                                    <input type="radio" name="gender" value="male">Male</label>
+                                <label>
+                                    <input type="radio" name="gender" value="female">Female</label>
+                      
+            <label for="Height">Height </label>
+                <input type="number" id="Height cm" name="Height" class="small" >  cm</input>
+                <input type="number" id="Height inches" name="Height"  class="small">  inch</input>
+            <label for="Religion">Religion</label>
+                <input type="text" id="religion" name="religion" required>
+            </section>                 
+              </fieldset>
+             
+              <div class="center">
+                <button id=sub type="submit">Submit the form</button>
+                 </div>
+            
+          </form>
+		</section>
+		
+	</div>
+	<!--This is js script link, used for checking to make sure required fields are completed. It will also tell us that the form has successfully been submitted.-->
+	<!--we eill learn more about it further-->
+	<script src="js/forms.js"></script>
+</body>
+</html>
+
+
+
+
+
