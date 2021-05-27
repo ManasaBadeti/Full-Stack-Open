@@ -1,0 +1,35 @@
+title Single page app
+
+
+note left of Browser: User visits SPA
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+Server->Browser: HTTP response for /spa
+
+note over Browser:
+Browser parses the HTML code 
+and requests the CSS and JS files
+end note
+
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+
+Server->Browser: main.css
+
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+
+Server->Browser: spa.js
+
+note over Browser: 
+Browser starts executing the JS code that
+request data.json to get the list of notes
+end note
+Browser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+
+
+
+Server->Browser: [{"content": "Hello world","date":"2021-05-27T09:32:434Z"},....]
+
+note over Browser: 
+Browser executes the event handler that parses the data 
+and renders notes to display.
+end note
