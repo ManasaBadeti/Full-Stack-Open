@@ -5,7 +5,7 @@ import './App.css';
 
 const Statistics = ({ good, neutral, bad }) => {
   const total = good + neutral + bad;
-  const average = good * 1 + neutral * 0 + bad * -1; // Good = 1, neutral = 0, bad = -1
+  const average = (good * 1 + neutral * 0 + bad * -1)/total; // Good = 1, neutral = 0, bad = -1
   const positivePercent = `${(good / total) * 100}%`;
     return (
       <div>
