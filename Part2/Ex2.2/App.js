@@ -7,15 +7,18 @@ const App = () => {
       </div>
     )
   }
-  
+   const Part = ({ part }) => {
+    return (
+        <>
+            <p>{part.name} {part.exercises}</p>
+        </>
+    )
+}
   const Content =  ({parts}) => {
-    const [part1, part2, part3, part4] = parts;
+    
     return (
       <div style={{fontSize:30,color:"hotpink",fontStyle:"italic",fontFamily:"serif"}}>
-        <p>  {part1.name}     {part1.exercises} </p>
-        <p> {part2.name}      {part2.exercises} </p>
-        <p> {part3.name}       {part3.exercises} </p>
-        <p> {part4.name}       {part4.exercises} </p>
+        {parts.map((part) => <Part key={part.id} part={part} />)}
       </div>
     )
   }
