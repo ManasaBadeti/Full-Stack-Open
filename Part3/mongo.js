@@ -41,4 +41,4 @@ if (process.argv.length == 3) {
         mongoose.connection.close()
     })
 }
-© 2021 GitHub, Inc.
+
